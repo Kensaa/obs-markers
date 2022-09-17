@@ -1,0 +1,24 @@
+{
+  "name": "obs-markers",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/main.js",
+  "bin": "src/main.js",
+  "scripts": {
+    "start": "node .",
+    "build": "pkg ."
+  },
+  "author": "Kensa",
+  "license": "ISC",
+  "dependencies": {
+    "obs-websocket-js": "^5.0.1",
+    "uiohook-napi": "^1.5.0"
+  },
+  "pkg": {
+    "outputPath": "dist",
+    "targets": [
+        "node18-win-x64"
+    ]
+}
+}
