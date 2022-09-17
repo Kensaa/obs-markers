@@ -6,16 +6,16 @@ import * as path from 'path'
 const obs = new OBSWebSocket()
 let output = []
 
-let config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
-if (!config.address || !config.password) {
+if (!fs.existsSync('config.json')) {
     const defaultConfig = {
         "address": "ws://localhost:4455",
         "password": "password"
     }
     fs.writeFileSync('config.json', JSON.stringify(defaultConfig, null, 4))
-    config = defaultConfig
 }
+
+const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
 obs.connect(config.address,config.password)
 
