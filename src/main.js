@@ -49,6 +49,11 @@ uIOhook.on('keydown', async e => {
             time.minutes = 0
             time.seconds = 0
         }
+        time.hours = time.hours.toString().padStart(2,'0')
+        time.minutes = time.minutes.toString().padStart(2,'0')
+        time.seconds = time.seconds.toString().padStart(2,'0')
+        time.milliseconds = time.milliseconds.toString().padStart(4,'0')
+        
         output.push({
             timecode: `${time.hours}:${time.minutes}:${time.seconds}.${time.milliseconds}`,
             duration: res.outputDuration
